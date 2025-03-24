@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigel Villa</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #image-container {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            margin: 10px;
+            transition: transform 0.1s ease-in-out;
+        }
+        .lock {
+            background-color: red;
+        }
+        .unlock {
+            background-color: green;
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <h1>Nigel Villa</h1>
+    <button class="lock" onclick="lockImage()">Lock</button>
+    <button class="unlock" onclick="unlockImage()">Unlock</button>
+    <div id="image-container"></div>
+    
+    <script>
+        function lockImage() {
+            document.getElementById("image-container").innerHTML = '';
+        }
+        
+        function unlockImage() {
+            document.getElementById("image-container").innerHTML = '<img src="http://your-esp32-ip/capture" id="esp32-image" alt="ESP32 Stream" width="300" height="300">';
+        }
+    </script>
+</body>
+</html>
